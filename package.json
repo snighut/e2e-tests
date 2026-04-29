@@ -1,0 +1,17 @@
+{
+  "name": "e2e-tests",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Scheduled Playwright tests for synthetic Supabase auth activity",
+  "scripts": {
+    "test": "playwright test",
+    "test:supabase-activity": "playwright test tests/supabase-activity.spec.ts",
+    "test:watch-login": "PW_SLOWMO=500 playwright test tests/supabase-activity.spec.ts --headed --workers=1 --timeout=120000 --retries=0 --trace=on"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.53.0",
+    "@types/node": "^22.13.9",
+    "dotenv": "^16.4.5",
+    "typescript": "^5.6.3"
+  }
+}
