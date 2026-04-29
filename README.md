@@ -33,3 +33,23 @@ To change the speed, set `PW_SLOWMO` (milliseconds), for example:
 ```bash
 PW_SLOWMO=900 npm run test:supabase-activity -- --headed
 ```
+
+## Trigger one-off run in Kubernetes
+
+After you push changes to this repository, you can manually trigger the CronJob clone/run path from this directory.
+
+```bash
+npm run k8s:trigger-supabase-activity
+```
+
+Follow logs of the latest job:
+
+```bash
+npm run k8s:logs-latest-job
+```
+
+Prerequisites:
+
+- `kubectl` is installed
+- current context points to your production cluster
+- Flux has already applied the `supabase-activity-playwright` CronJob
