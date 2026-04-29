@@ -6,7 +6,9 @@
   "scripts": {
     "test": "playwright test",
     "test:supabase-activity": "playwright test tests/supabase-activity.spec.ts",
+    "test:collab-journeys": "playwright test tests/collaboration-journeys.spec.ts --workers=1",
     "test:watch-login": "PW_SLOWMO=500 playwright test tests/supabase-activity.spec.ts --headed --workers=1 --timeout=120000 --retries=0 --trace=on",
+    "test:watch-collab-journeys": "PW_SLOWMO=250 playwright test tests/collaboration-journeys.spec.ts --headed --workers=1 --timeout=30000 --retries=0 --trace=on",
     "k8s:trigger-supabase-activity": "kubectl -n production create job --from=cronjob/supabase-activity-playwright supabase-activity-manual-$(date +%s)",
     "k8s:logs-latest-job": "kubectl -n production logs -f job/$(kubectl -n production get jobs --sort-by=.metadata.creationTimestamp -o jsonpath='{.items[-1:].metadata.name}')"
   },

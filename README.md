@@ -28,6 +28,28 @@ Run visually (headed + slow motion):
 npm run test:watch-login
 ```
 
+## Collaboration journey suite
+
+This suite validates realistic end-to-end flows against the live app:
+
+- Projects loading, count visibility, and project navigation.
+- Title edit persistence in project listing with automatic revert.
+- Save behavior for existing and new designs, with cleanup (revert/delete).
+
+The suite automatically selects the first project from `/mydesigns` for existing-design journeys.
+
+Run it with:
+
+```bash
+npm run test:collab-journeys
+```
+
+Run it visually:
+
+```bash
+npm run test:watch-collab-journeys
+```
+
 To change the speed, set `PW_SLOWMO` (milliseconds), for example:
 
 ```bash
